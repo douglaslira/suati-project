@@ -1,0 +1,45 @@
+{
+  "name": "suati-project",
+  "description": "Project for SUATI",
+  "version": "0.0.1",
+  "homepage": "https://github.com/douglaslira/suati-project",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular-route": "^1.6.4",
+    "angular-loader": "^1.6.4",
+    "html5-boilerplate": "^5.3.0",
+    "angular": "^1.6.4",
+    "bootstrap": "^3.3.7",
+    "angular-bootstrap": "^2.5.0",
+    "angular-messages": "^1.6.4",
+    "angular-animate": "^1.6.4",
+    "angular-sanitize": "^1.6.4",
+    "moment": "^2.18.1",
+    "angular-mocks": "^1.6.4",
+    "font-awesome": "^4.7.0",
+    "angular-local-storage": "^0.5.2",
+    "angular-jwt": "^0.1.9",
+    "jquery": "^3.2.1"
+  },
+  "authors": [
+    "Douglas Lira <douglas.lira.web@gmail.com>"
+  ],
+  "main": "",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "AngularJS",
+    "Javascript",
+    "Suati",
+    "Karma"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
