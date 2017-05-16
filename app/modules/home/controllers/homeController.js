@@ -4,9 +4,9 @@
 
     angular.module('suatiApp.home').controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', 'CoreService'];
+    HomeController.$inject = ['$scope', 'CoreService', '$uibModal', '$log'];
 
-    function HomeController(scope, CoreService){
+    function HomeController(scope, CoreService, $uibModal, $log){
 
         scope.hello = 'Hello World!!';
         scope.listOfContracts = [];
@@ -14,7 +14,6 @@
             column: 'Código',
             descending: false
         };
-
 
         scope.init = function(){
             CoreService.getData().get().$promise.then(function(res){
@@ -37,6 +36,29 @@
                 sort.descending = false;
             }
         };
+
+        scope.editContract = function(o){
+            var modalInstance = $uibModal.open({
+                animation: true,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'modules/home/views/modal.controller.html',
+                controller: 'ModalController',
+                controllerAs: 'vm',
+                size: 'lg',
+                resolve: {
+                    item: function () {
+                        return o;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                console.log(selectedItem);
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+        }
     }
 
 })();

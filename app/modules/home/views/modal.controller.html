@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Detalhe o item {{vm.item["Código"]}}</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <form>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="codigo">Código</label>
+                    <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Código do contrato" ng-model="vm.item['Código']">
+                </div>
+                <div class="form-group">
+                    <label for="natureza">Natureza</label>
+                    <input type="text" class="form-control" name="natureza" id="natureza" placeholder="Natureza do contrato" ng-model="vm.item['Natureza']">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>

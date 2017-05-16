@@ -1,14 +1,19 @@
 <div class="row" ng-init="init();">
     <fieldset>
         <legend>List of contracts</legend>
+        <div class="form-group">
+            <label>Pesquisar</label>
+            <input type="text" class="form-control" ng-model="q">
+        </div>
         <table class="table table-condensed table-bordered table-hover">
             <thead>
                 <tr>
                     <th ng-repeat="(key, value) in listOfContracts[0]" ng-click="changeSorting(key)">{{key}} <i class="fa" ng-class="{'fa-sort-asc':sort.descending,'fa-sort-desc':!sort.descending}"></i></th>
+                    <th>Opções</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in listOfContracts | orderObjectBy:sort.column:sort.descending">
+                <tr ng-repeat="item in listOfContracts | orderObjectBy:sort.column:sort.descending | filter:q">
                     <td>{{item["Código"]}}</td>
                     <td>{{item["Data acordo comercial"]}}</td>
                     <td>{{item["Natureza"]}}</td>
@@ -24,6 +29,12 @@
                     <td>{{item["Fim fornecimento"]}}</td>
                     <td>{{item["Início vigência"]}}</td>
                     <td>{{item["Fim vigência"]}}</td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-default" ng-click="editContract(item);"><i class="fa fa-edit"></i></button>
+                            <button type="button" class="btn btn-default" ng-click="ViewContract(item);"><i class="fa fa-eye"></i></button>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
