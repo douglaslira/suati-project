@@ -53,6 +53,7 @@ gulp.task('constants', function () {
 gulp.task('copy', function() {
     gulp.src(['app/images/**/*']).pipe(gulp.dest('build/images'));
     gulp.src(['app/fonts/**/*']).pipe(gulp.dest('build/fonts'));
+    gulp.src(['app/data/**/*']).pipe(gulp.dest('build/data'));
 });
 
 gulp.task('fonts', function() {

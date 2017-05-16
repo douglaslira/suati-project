@@ -7,7 +7,7 @@ describe('HomeController::Test', function() {
     });
 
     beforeEach(inject(function ($controller) {
-        $controller('HomeController', {$scope: scope});
+        $controller('HomeController', {$scope: scope, CoreService: ''});
     }));
 
     it('should HomeController is dedined', function () {
@@ -15,7 +15,7 @@ describe('HomeController::Test', function() {
     });
 
     it('should check value of hello default', function () {
-        expect(scope.hello).toEqual('Hello World!');
+        expect(scope.hello).toEqual('Hello World!!');
     });
 
 });

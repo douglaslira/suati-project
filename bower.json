@@ -20,7 +20,8 @@
     "font-awesome": "^4.7.0",
     "angular-local-storage": "^0.5.2",
     "angular-jwt": "^0.1.9",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "angular-resource": "^1.6.4"
   },
   "authors": [
     "Douglas Lira <douglas.lira.web@gmail.com>"
