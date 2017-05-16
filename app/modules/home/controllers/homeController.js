@@ -7,7 +7,7 @@
     HomeController.$inject = ['$scope'];
 
     function HomeController(scope){
-        scope.hello = 'Hello World!';
+        scope.hello = 'Hello World!!';
     }
 
 })();
