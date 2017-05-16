@@ -4,11 +4,11 @@
         <table class="table table-condensed table-bordered table-hover">
             <thead>
                 <tr>
-                    <th ng-repeat="(key, value) in listOfContracts[0]" ng-click="changeSorting(key)">{{key}}</th>
+                    <th ng-repeat="(key, value) in listOfContracts[0]" ng-click="changeSorting(key)">{{key}} <i class="fa" ng-class="{'fa-sort-asc':sort.descending,'fa-sort-desc':!sort.descending}"></i></th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in listOfContracts | orderObjectBy:sort.column">
+                <tr ng-repeat="item in listOfContracts | orderObjectBy:sort.column:sort.descending">
                     <td>{{item["Código"]}}</td>
                     <td>{{item["Data acordo comercial"]}}</td>
                     <td>{{item["Natureza"]}}</td>

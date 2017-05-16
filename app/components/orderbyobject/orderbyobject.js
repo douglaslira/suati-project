@@ -7,7 +7,8 @@
     orderObjectBy.$inject = [];
 
     function orderObjectBy(){
-        return function(input, attribute) {
+
+        return function(input, attribute, asc) {
 
             if (!angular.isObject(input)) {
                 return input;
@@ -18,12 +19,18 @@
                 array.push(input[objectKey]);
             }
 
-            array.sort(function (a, b) {
-                a = parseInt(a[attribute]);
-                b = parseInt(b[attribute]);
-                return a - b;
-            });
+            if(asc){
+                array.sort(function (a, b) {
+                    a = parseInt(a[attribute]);
+                    b = parseInt(b[attribute]);
+                    return a - b;
+                });
+            } else {
+                array.reverse();
+            }
+
             return array;
         }
     }
-});
+
+})();
