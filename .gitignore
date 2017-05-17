@@ -1,7 +1,6 @@
 .idea
 bower_components
 node_modules
-coverage
 npm-debug.log
 build
 app/templates.js

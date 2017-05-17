@@ -25,7 +25,7 @@
 
             }, function(error){
                 console.log(error);
-            })
+            });
         };
 
         scope.changeSorting = function(column) {
