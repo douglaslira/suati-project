@@ -8,7 +8,6 @@
 
     function HomeController(scope, CoreService, $uibModal, $log){
 
-        scope.hello = 'Hello World!!';
         scope.listOfContracts = [];
         scope.listOfColumns = [];
         scope.sort = {
@@ -27,10 +26,6 @@
             }, function(error){
                 console.log(error);
             })
-        };
-
-        scope.selectedCls = function(column) {
-            return column == scope.sort.column && 'sort-' + scope.sort.descending;
         };
 
         scope.changeSorting = function(column) {
