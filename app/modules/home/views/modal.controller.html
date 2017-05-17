@@ -2,24 +2,33 @@
     <h3 class="modal-title" id="modal-title">Editar contrato - {{vm.item["Código"]}}</h3>
 </div>
 <div class="modal-body" id="modal-body">
-    <form>
+    <form novalidate name="formContract" id="formContract">
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="codigo">Código</label>
-                    <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Código do contrato" ng-model="vm.item['Código']">
+                    <input type="text" required class="form-control" name="codigo" id="codigo" placeholder="Código do contrato" ng-model="vm.item['Código']">
+                    <div class="help-block" ng-messages="formContract.codigo.$error" ng-if="formContract.codigo.$touched && formContract.codigo.$invalid && formContract.codigo.$dirty">
+                        <p ng-message="required">Este campo deve ser preenchido</p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="data_acordo">Data acordo comercial</label>
-                    <input type="text" class="form-control" name="data_acordo" id="data_acordo" placeholder="Data acordo comercial" ng-model="vm.item['Data acordo comercial']">
+                    <input type="text" required class="form-control" name="data_acordo" id="data_acordo" placeholder="Data acordo comercial" ng-model="vm.item['Data acordo comercial']">
+                    <div class="help-block" ng-messages="formContract.data_acordo.$error" ng-if="formContract.data_acordo.$touched && formContract.data_acordo.$invalid && formContract.data_acordo.$dirty">
+                        <p ng-message="required">Este campo deve ser preenchido</p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="natureza">Natureza</label>
-                    <input type="text" class="form-control" name="natureza" id="natureza" placeholder="Natureza" ng-model="vm.item['Natureza']">
+                    <input type="text" required class="form-control" name="natureza" id="natureza" placeholder="Natureza" ng-model="vm.item['Natureza']">
+                    <div class="help-block" ng-messages="formContract.natureza.$error" ng-if="formContract.natureza.$touched && formContract.natureza.$invalid && formContract.natureza.$dirty">
+                        <p ng-message="required">Este campo deve ser preenchido</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -28,19 +37,28 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="comprador">Comprador</label>
-                    <input type="text" class="form-control" name="comprador" id="comprador" placeholder="Comprador" ng-model="vm.item['Comprador']">
+                    <input type="text" required class="form-control" name="comprador" id="comprador" placeholder="Comprador" ng-model="vm.item['Comprador']">
+                    <div class="help-block" ng-messages="formContract.comprador.$error" ng-if="formContract.comprador.$touched && formContract.comprador.$invalid && formContract.comprador.$dirty">
+                        <p ng-message="required">Este campo deve ser preenchido</p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="vendedor">Vendedor</label>
-                    <input type="text" class="form-control" name="vendedor" id="vendedor" placeholder="Vendedor" ng-model="vm.item['Vendedor']">
+                    <input type="text" required class="form-control" name="vendedor" id="vendedor" placeholder="Vendedor" ng-model="vm.item['Vendedor']">
+                    <div class="help-block" ng-messages="formContract.vendedor.$error" ng-if="formContract.vendedor.$touched && formContract.vendedor.$invalid && formContract.vendedor.$dirty">
+                        <p ng-message="required">Este campo deve ser preenchido</p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="energia_referencia">Energia referência</label>
-                    <input type="text" class="form-control" name="energia_referencia" id="energia_referencia" placeholder="Energia referência" ng-model="vm.item['Energia referência']">
+                    <input type="text" required class="form-control" name="energia_referencia" id="energia_referencia" placeholder="Energia referência" ng-model="vm.item['Energia referência']">
+                    <div class="help-block" ng-messages="formContract.energia_referencia.$error" ng-if="formContract.energia_referencia.$touched && formContract.energia_referencia.$invalid && formContract.energia_referencia.$dirty">
+                        <p ng-message="required">Este campo deve ser preenchido</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -49,19 +67,28 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="energia_entregue">Energia entregue</label>
-                    <input type="text" class="form-control" name="energia_entregue" id="energia_entregue" placeholder="Energia entregue" ng-model="vm.item['Energia entregue']">
+                    <input type="text" required class="form-control" name="energia_entregue" id="energia_entregue" placeholder="Energia entregue" ng-model="vm.item['Energia entregue']">
+                    <div class="help-block" ng-messages="formContract.energia_entregue.$error" ng-if="formContract.energia_entregue.$touched && formContract.energia_entregue.$invalid && formContract.energia_entregue.$dirty">
+                        <p ng-message="required">Este campo deve ser preenchido</p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="status_aprovacao">Status aprovação</label>
-                    <input type="text" class="form-control" name="status_aprovacao" id="status_aprovacao" placeholder="Status aprovação" ng-model="vm.item['Status aprovação']">
+                    <input type="text" required class="form-control" name="status_aprovacao" id="status_aprovacao" placeholder="Status aprovação" ng-model="vm.item['Status aprovação']">
+                    <div class="help-block" ng-messages="formContract.status_aprovacao.$error" ng-if="formContract.status_aprovacao.$touched && formContract.status_aprovacao.$invalid && formContract.status_aprovacao.$dirty">
+                        <p ng-message="required">Este campo deve ser preenchido</p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="modelo">Modelo</label>
-                    <input type="text" class="form-control" name="modelo" id="modelo" placeholder="Modelo" ng-model="vm.item['Modelo']">
+                    <input type="text" required class="form-control" name="modelo" id="modelo" placeholder="Modelo" ng-model="vm.item['Modelo']">
+                    <div class="help-block" ng-messages="formContract.modelo.$error" ng-if="formContract.modelo.$touched && formContract.modelo.$invalid && formContract.modelo.$dirty">
+                        <p ng-message="required">Este campo deve ser preenchido</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -70,19 +97,33 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="preco_base_contratado">Preço base contratado</label>
-                    <input type="text" class="form-control" name="preco_base_contratado" id="preco_base_contratado" placeholder="Preço base contratado" ng-model="vm.item['Preço base contratado']">
+                    <input type="text" required class="form-control" name="preco_base_contratado" id="preco_base_contratado" placeholder="Preço base contratado" ng-model="vm.item['Preço base contratado']">
+                    <div class="help-block" ng-messages="formContract.preco_base_contratado.$error" ng-if="formContract.preco_base_contratado.$touched && formContract.preco_base_contratado.$invalid && formContract.preco_base_contratado.$dirty">
+                        <p ng-message="required">Este campo deve ser preenchido</p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="submercado">Submercado</label>
-                    <input type="text" class="form-control" name="submercado" id="submercado" placeholder="Submercado" ng-model="vm.item['Submercado']">
+                    <input type="text" required class="form-control" name="submercado" id="submercado" placeholder="Submercado" ng-model="vm.item['Submercado']">
+                    <div class="help-block" ng-messages="formContract.submercado.$error" ng-if="formContract.submercado.$touched && formContract.submercado.$invalid && formContract.submercado.$dirty">
+                        <p ng-message="required">Este campo deve ser preenchido</p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="inicio_fornecimento">Início fornecimento</label>
-                    <input type="text" class="form-control" name="inicio_fornecimento" id="inicio_fornecimento" placeholder="Início fornecimento" ng-model="vm.item['Início fornecimento']">
+                    <div class="input-group">
+                        <input type="text" required uib-datepicker-popup="{{vm.datepicker[0].format}}" is-open="vm.datepicker[0].opened" class="form-control" name="inicio_fornecimento" id="inicio_fornecimento" placeholder="Início fornecimento" ng-model="vm.item['Início fornecimento']">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="vm.openDate(vm.datepicker[0])"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
+                    <div class="help-block" ng-messages="formContract.inicio_fornecimento.$error" ng-if="formContract.inicio_fornecimento.$touched && formContract.inicio_fornecimento.$invalid && formContract.inicio_fornecimento.$dirty">
+                        <p ng-message="required">Este campo deve ser preenchido</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,19 +132,43 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="fim_fornecimento">Fim fornecimento</label>
-                    <input type="text" class="form-control" name="fim_fornecimento" id="fim_fornecimento" placeholder="Fim fornecimento" ng-model="vm.item['Fim fornecimento']">
+                    <div class="input-group">
+                        <input type="text" required uib-datepicker-popup="{{vm.datepicker[1].format}}" is-open="vm.datepicker[1].opened" class="form-control" name="fim_fornecimento" id="fim_fornecimento" placeholder="Fim fornecimento" ng-model="vm.item['Fim fornecimento']">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="vm.openDate(vm.datepicker[1])"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
+                    <div class="help-block" ng-messages="formContract.fim_fornecimento.$error" ng-if="formContract.fim_fornecimento.$touched && formContract.fim_fornecimento.$invalid && formContract.fim_fornecimento.$dirty">
+                        <p ng-message="required">Este campo deve ser preenchido</p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="inicio_vigencia">Início vigência</label>
-                    <input type="text" class="form-control" name="inicio_vigencia" id="inicio_vigencia" placeholder="Início vigência" ng-model="vm.item['Início vigência']">
+                    <div class="input-group">
+                        <input type="text" required uib-datepicker-popup="{{vm.datepicker[2].format}}" is-open="vm.datepicker[2].opened" class="form-control" name="inicio_vigencia" id="inicio_vigencia" placeholder="Início vigência" ng-model="vm.item['Início vigência']">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="vm.openDate(vm.datepicker[2])"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
+                    <div class="help-block" ng-messages="formContract.inicio_vigencia.$error" ng-if="formContract.inicio_vigencia.$touched && formContract.inicio_vigencia.$invalid && formContract.inicio_vigencia.$dirty">
+                        <p ng-message="required">Este campo deve ser preenchido</p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="fim_vigencia">Fim vigência</label>
-                    <input type="text" class="form-control" name="fim_vigencia" id="fim_vigencia" placeholder="Fim vigência" ng-model="vm.item['Fim vigência']">
+                    <div class="input-group">
+                        <input type="text" required uib-datepicker-popup="{{vm.datepicker[3].format}}" is-open="vm.datepicker[3].opened" class="form-control" name="fim_vigencia" id="fim_vigencia" placeholder="Fim vigência" ng-model="vm.item['Fim vigência']">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="vm.openDate(vm.datepicker[3])"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
+                    <div class="help-block" ng-messages="formContract.fim_vigencia.$error" ng-if="formContract.fim_vigencia.$touched && formContract.fim_vigencia.$invalid && formContract.fim_vigencia.$dirty">
+                        <p ng-message="required">Este campo deve ser preenchido</p>
+                    </div>
                 </div>
             </div>
         </div>

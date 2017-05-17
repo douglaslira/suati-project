@@ -1,45 +1,49 @@
 <div class="row" ng-init="init();">
     <fieldset>
         <legend>List of contracts</legend>
-        <div class="form-group">
-            <label>Pesquisar</label>
-            <input type="text" class="form-control" placeholder="Pesquisar..." ng-model="q">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Pesquisar</label>
+                <input type="text" class="form-control" placeholder="Pesquisar..." ng-model="q">
+            </div>
+            <div class="form-group">
+                <button class="btn" type="button" ng-click="viewHideColumn()">Visualizar/Esconder colunas</button>
+            </div>
         </div>
-        <div class="form-group">
-            <button class="btn" type="button" ng-click="viewHideColumn()">Visualizar/Esconder colunas</button>
+        <div class="col-md-12">
+            <table class="table table-condensed table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th ng-repeat="(key, value) in listOfContracts[0]" ng-if="listOfColumns[$index].visible" ng-click="changeSorting(key)">{{key}} <i class="fa" ng-class="{'fa-sort-asc':sort.descending,'fa-sort-desc':!sort.descending}"></i></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in listOfContracts | orderObjectBy:sort.column:sort.descending | filter:q">
+                        <td ng-if="listOfColumns[0].visible">{{item["Código"]}}</td>
+                        <td ng-if="listOfColumns[1].visible">{{item["Data acordo comercial"]}}</td>
+                        <td ng-if="listOfColumns[2].visible">{{item["Natureza"]}}</td>
+                        <td ng-if="listOfColumns[3].visible">{{item["Comprador"]}}</td>
+                        <td ng-if="listOfColumns[4].visible">{{item["Vendedor"]}}</td>
+                        <td ng-if="listOfColumns[5].visible">{{item["Energia referência"]}}</td>
+                        <td ng-if="listOfColumns[6].visible">{{item["Energia entregue"]}}</td>
+                        <td ng-if="listOfColumns[7].visible">{{item["Status aprovação"]}}</td>
+                        <td ng-if="listOfColumns[8].visible">{{item["Modelo"]}}</td>
+                        <td ng-if="listOfColumns[9].visible">{{item["Preço base contratado"]}}</td>
+                        <td ng-if="listOfColumns[10].visible">{{item["Submercado"]}}</td>
+                        <td ng-if="listOfColumns[11].visible">{{item["Início fornecimento"] | date:'MMM/yyyy'}}</td>
+                        <td ng-if="listOfColumns[12].visible">{{item["Fim fornecimento"] | date:'MMM/yyyy'}}</td>
+                        <td ng-if="listOfColumns[13].visible">{{item["Início vigência"] | date:'MMM/yyyy'}}</td>
+                        <td ng-if="listOfColumns[14].visible">{{item["Fim vigência"] | date:'MMM/yyyy'}}</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-default" ng-click="editContract(item);"><i class="fa fa-edit"></i></button>
+                                <button type="button" class="btn btn-default" ng-click="viewContract(item);"><i class="fa fa-eye"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <table class="table table-condensed table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th ng-repeat="(key, value) in listOfContracts[0]" ng-if="listOfColumns[$index].visible" ng-click="changeSorting(key)">{{key}} <i class="fa" ng-class="{'fa-sort-asc':sort.descending,'fa-sort-desc':!sort.descending}"></i></th>
-                    <th>Opções</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="item in listOfContracts | orderObjectBy:sort.column:sort.descending | filter:q">
-                    <td ng-if="listOfColumns[0].visible">{{item["Código"]}}</td>
-                    <td ng-if="listOfColumns[1].visible">{{item["Data acordo comercial"]}}</td>
-                    <td ng-if="listOfColumns[2].visible">{{item["Natureza"]}}</td>
-                    <td ng-if="listOfColumns[3].visible">{{item["Comprador"]}}</td>
-                    <td ng-if="listOfColumns[4].visible">{{item["Vendedor"]}}</td>
-                    <td ng-if="listOfColumns[5].visible">{{item["Energia referência"]}}</td>
-                    <td ng-if="listOfColumns[6].visible">{{item["Energia entregue"]}}</td>
-                    <td ng-if="listOfColumns[7].visible">{{item["Status aprovação"]}}</td>
-                    <td ng-if="listOfColumns[8].visible">{{item["Modelo"]}}</td>
-                    <td ng-if="listOfColumns[9].visible">{{item["Preço base contratado"]}}</td>
-                    <td ng-if="listOfColumns[10].visible">{{item["Submercado"]}}</td>
-                    <td ng-if="listOfColumns[11].visible">{{item["Início fornecimento"]}}</td>
-                    <td ng-if="listOfColumns[12].visible">{{item["Fim fornecimento"]}}</td>
-                    <td ng-if="listOfColumns[13].visible">{{item["Início vigência"]}}</td>
-                    <td ng-if="listOfColumns[14].visible">{{item["Fim vigência"]}}</td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" ng-click="editContract(item);"><i class="fa fa-edit"></i></button>
-                            <button type="button" class="btn btn-default" ng-click="viewContract(item);"><i class="fa fa-eye"></i></button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
     </fieldset>
 </div>
