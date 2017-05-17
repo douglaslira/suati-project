@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Detalhe do contrato {{vm.item["Código"]}}</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="(key, value) in vm.items[0]">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-click="vm.showHide($index)" ng-checked="!vm.columns[$index].visible">{{key}}
+                </label>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.ok()">Fechar</button>
+</div>
